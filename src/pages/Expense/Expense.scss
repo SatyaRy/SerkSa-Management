@@ -1,0 +1,142 @@
+@import "../../styles/variable.scss";
+.expense{
+    display: grid;
+    width: auto;
+    gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: minmax(180px, auto);
+    .box{
+        border: none;
+        border-radius: 10px;
+        align-items: start;
+        display: flex;
+        padding: 20px;
+        justify-content: start;
+    }
+    .box4{
+        grid-column: span 3;
+        display: flex;
+        flex-direction: column;
+        grid-row: span 2;
+        background-color: white;
+        gap: 10px;
+        span{
+            font-size: 1.2rem;
+        }
+        .inputData{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            table{
+                border-collapse: collapse;
+                thead{
+                    border: solid black;
+                    height: 50px;
+                    th {
+                        border: solid black;
+                        
+                    }
+                }
+                td{
+                    text-align: center;
+                    border: solid rgb(176, 176, 176); 
+                    height: 50px;
+                    input{
+                        width: auto;
+                        height:auto;
+                        text-align: center;
+                        font-size: 1.2rem;
+                        border:none;
+                        outline:none;
+                     
+                    }
+                    button{
+                        border: none;
+                        width: 100%;
+                        height: 100%;
+                        color: white;
+                        font-size: 1rem;
+                        background-color: #4379F2;
+                    }
+                }
+               
+            }
+           
+        }
+     
+        
+
+    }
+}
+.balance{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.boxI{
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    justify-content: space-between;
+    .info{
+        display: flex;
+        width: 50%;
+        gap: 15px;
+        height: auto;
+        flex-direction: column;
+    }
+    .chart{
+        display: flex;
+        width: 50%;
+        border: solid black;
+    }
+}
+
+.updateModel{
+    width: 300px;
+    left:40%;
+    position: absolute;
+    background-color: white;
+    height: 400px;
+    box-shadow: 2px 2px 10px black;
+    display: flex;
+    gap: 20px;
+    padding: 1vw 0vw 0px 2vw;
+    flex-direction: column;
+    .inputDataModel{
+        display: flex;
+        height: 70%;
+        gap: 10px;
+        flex-direction: column;
+        #balanceInput{
+            width: 90%;
+            border: solid grey;
+            height: 40px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    }
+    .updateDataButton{
+        display: flex;
+        justify-content: end;
+        padding-right: 2vw;
+        gap: 20px;
+        button{
+            border: none;
+            border-radius: 5px;
+            color: white;
+            &:nth-child(1){
+                width: 100px;
+                height: 30px;
+                background-color: rgb(23, 228, 81);
+            }
+            &:nth-child(2){
+                width: 80px;
+                height: 30px;
+                background-color: rgb(228, 23, 40);
+            }
+        }
+    }
+}

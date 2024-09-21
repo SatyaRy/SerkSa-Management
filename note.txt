@@ -1,0 +1,16 @@
+ {Money.map((value,index)=>{
+                    return(
+                        <>
+                                <div className ="box boxI" style ={{backgroundColor :`${value.background}`}} key={index}>
+                                    <div className ="info">
+                                        <span style ={{fontSize: "1.5rem",fontWeight:"200"}}>{value.name}</span>
+                                        <div className="balance" key ={index}>
+                                            <span style ={{fontSize: "1.3rem",}}>{value.money}</span>
+                                            <span style ={{color: value.percent<0? `red`:`limegreen`}}>{value.percent >0? `+${value.percent}%`:`${value.percent}%`}</span>
+                                        </div>
+                                    </div>
+                                    {value.type ==="pie"? <BarData data={value.chartData} dataKey = {value.dataKey}/> :<LineChart stroke={value.stroke} data={value.chartData} dataKey={value.dataKey}/>}
+                                </div>
+                        </>     
+                    ) }
+                )}
