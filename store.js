@@ -6,7 +6,8 @@ export const useStore = create((set)=>({
     expense:0,
     monthName: "January",
     indexNumber: 0,
-    arrayData:[],
+    expenseData:[],
+    allData: [],
     toggleShow: ()=>
         set((state)=>(
             {
@@ -17,7 +18,8 @@ export const useStore = create((set)=>({
     changeBalance: (newBalance)=>set(()=>({balance: newBalance})),
     changeIncome: (newIncome)=>set(()=>({income: newIncome})),
     changeExpense: (newExpense)=>set(()=>({expense: newExpense})),
-    updateArray: (array)=>set(()=>({arrayData: array}))
+    expenseArray: (array)=>set(()=>({expenseData: array})),
+    updateData: (array)=>set(()=>({allData: array}))
     
 
     

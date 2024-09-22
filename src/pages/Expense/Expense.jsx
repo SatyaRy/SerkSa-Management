@@ -9,13 +9,12 @@ import { useStore } from "../../../store.js";
 import { useQuery } from "react-query";
 export default function Expense(){
     const [month, setMonth] = useState([])
-    const {show,toggleShow,changeName,changeIndex,updateArray,arrayData} = useStore()
+    const {show,toggleShow,changeName,changeIndex} = useStore()
     const fetchData=async()=>{
             const dbRef =query(ref(db, "month"),)
             const snapshot = await get(dbRef)
             if(snapshot.exists()){
-               setMonth(Object.values(snapshot.val()))
-
+                setMonth(Object.values(snapshot.val()))
             }
             else{
                 console.log("error")
@@ -31,18 +30,19 @@ export default function Expense(){
     return(
         <>
             <div className ="expense">
-                 <Graphic/>
+               <div style={{width:"1200px", display:"flex", border: "none",borderRadius:"10px", background:"white"}}>
+                <Graphic/>
+               </div>
                 <div className ="box box4">
-                   <span>Update Chart Data</span>
+                   <span>Update Monthly PnL</span>
                     <div className ="inputData">
                        {show &&  <UpdateModel/>}
                       <table>
                         <thead>
                             <tr>
                                 <th scope="col">Month</th>
-                                <th scope="col">Balance</th>
-                                <th scope="col">Income</th>
-                                <th scope="col">Expense</th>
+                                <th scope="col">Profit</th>
+                                <th scope="col">Loss</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -52,9 +52,6 @@ export default function Expense(){
                                         <>
                                             <tr  key={index}> 
                                                 <td scope="col">{value.name}</td>
-                                                <td scope="col">
-                                                    {value.balance}
-                                                </td>
                                                 <td scope="col" >
                                                     {value.income}
                                                 </td>
@@ -78,11 +75,10 @@ export default function Expense(){
 }
 
 const UpdateModel =({})=>{
-    const {toggleShow,monthName,changeBalance,balance,changeIncome, changeExpense,indexNumber, income, expense} = useStore()
+    const {toggleShow,monthName,changeIncome, changeExpense,indexNumber, income, expense} = useStore()
     const fetchData=async()=>{
             const dbRef =  ref(db, `month/${indexNumber}`)
             const dataUpdate ={
-                balance: balance,
                 income: income,
                 expense: expense,
             }
@@ -104,12 +100,10 @@ const UpdateModel =({})=>{
                     <span>Update Data</span>
                     <div className ="inputDataModel">
                         <span>Month: {monthName}</span>
-                        <label htmlFor="#balanceInput">Balance</label>
-                        <input type="number" id ="balanceInput" value ={balance} onChange={(e)=>{changeBalance(e.target.value)}}/>
                         <label htmlFor="#balanceInput">Income</label>
-                        <input type="number" id ="balanceInput" value ={income} onChange={(e)=>{changeIncome(e.target.value)}}/>
+                        <input type="number" id ="balanceInput" value ={income}  min ="1" onChange={(e)=>{changeIncome(e.target.value)}}/>
                         <label htmlFor="#balanceInput">Expense</label>
-                        <input type="number" id ="balanceInput" value ={expense} onChange={(e)=>{changeExpense(e.target.value)}}/>
+                        <input type="number" id ="balanceInput" value ={expense}  min ="1" onChange={(e)=>{changeExpense(e.target.value)}}/>
                     </div>
                     <div className ="updateDataButton">
                         <button onClick={saveButton}>Save Update</button>
