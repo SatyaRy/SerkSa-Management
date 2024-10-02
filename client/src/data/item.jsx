@@ -5,7 +5,7 @@ export const item =[
     {
         path:"/expense",
         logo: <CiMoneyCheck1/>,
-        feature: "Expense Tracker"
+        feature: "Monthly PnL"
     },
     {
         path:"/users",
@@ -13,8 +13,8 @@ export const item =[
         feature: "Users"
     },
     {
-        path:"/blog",
+        path:"/balance",
         logo: <MdHistory/>,
-        feature: "Transaction"
+        feature: "Daily Trade"
     },
 ]

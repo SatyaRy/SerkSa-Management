@@ -1,0 +1,84 @@
+.transContainer{
+    width: 400px;
+    height: 450px;
+    background-color: white;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    font-family:sf-pro;
+    margin:auto;
+    border-radius: 10px;
+    .transBox{
+        display: flex;
+        height: 100%;
+        gap: 20px;
+        flex-direction: column;
+        border-radius: 10px;
+        padding: 2vw;
+        border: solid black;
+        span{
+            font-size: 1.5rem;
+        }
+        .optionButton{
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            border-radius: 5px;
+            height: 50px;
+            align-items: center;
+            border: none;
+            padding: 0px 1vw 0px 1vw;
+            background-color: rgb(223, 223, 223);
+            button{
+                width: 100px;
+                border: none;
+                border-radius: 5px;
+                height: 30px;
+                box-shadow: 2px 2px 0px grey;
+                background-color: white;
+                color: white; font-weight: bold;
+            }
+        }
+        .availableAssets{
+            border-radius: 5px;
+            height: auto;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            input{
+                height: 40px;
+                width: 100%;
+                outline: none;
+                text-align: center;
+                font-size: 1.2rem;
+                font-weight: 100;
+                border: none;
+                border-radius: 5px;
+                background-color:rgb(223, 223, 223)
+            }
+        }
+        .addTransButton{
+            display: flex;
+            gap: 10px;
+            button{
+               width: 80px;
+               height: 30px;
+               border: none;
+               border-radius: 5px;
+               box-shadow: 2px 2px 0px grey;
+               color: white;
+               &:first-child{
+                background-color:#6EC207 ;
+               }
+               &:nth-child(2
+               ){
+                 background-color:#D91656 ;
+               }
+            }
+        }
+       
+    }
+   
+}

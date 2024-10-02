@@ -4,7 +4,7 @@ import './styles/Global.scss'
 //Pages
 import Home from "./pages/Home/Home.jsx"
 import Expense from "./pages/Expense/Expense.jsx"
-import Blog from "./pages/Blog/Blog.jsx"
+import Blog from "./pages/Balance/Balance.jsx"
 import Users from "./pages/User/Users.jsx"
 import Login from "./pages/Login/Login.jsx"
 import Setting from "./pages/Settings/Setting.jsx"
@@ -54,7 +54,7 @@ function App() {
           element:<Expense/>
         },
         {
-          path:"/blog",
+          path:"/Balance",
           element:<Blog/>
         },
         {

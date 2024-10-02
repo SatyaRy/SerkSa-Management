@@ -1,13 +1,14 @@
 import { create } from "zustand"
 export const useStore = create((set)=>({
     show: false,
-    balance:0,
     income:0,
     expense:0,
     monthName: "January",
     indexNumber: 0,
     expenseData:[],
+    incomeData:[],
     allData: [],
+    showTransaction: false,
     toggleShow: ()=>
         set((state)=>(
             {
@@ -15,12 +16,18 @@ export const useStore = create((set)=>({
             })),
     changeName: (name)=>set(()=>({monthName: name})),
     changeIndex: (index)=>set(()=>({indexNumber:index })),
-    changeBalance: (newBalance)=>set(()=>({balance: newBalance})),
     changeIncome: (newIncome)=>set(()=>({income: newIncome})),
     changeExpense: (newExpense)=>set(()=>({expense: newExpense})),
     expenseArray: (array)=>set(()=>({expenseData: array})),
-    updateData: (array)=>set(()=>({allData: array}))
-    
+    incomeArray: (array)=>set(()=>({incomeData: array})),
+    allDataArray: (array)=>set(()=>({allData: array})),
+    toggleTransaction: ()=>set((state)=>({showTransaction: !state.showTransaction}))
+}))
 
-    
+export const useAdd = create((set)=>({
+    asset: [],
+    amount: [],
+    addAmount: (newAmount)=>set(()=>({amount: newAmount})),
+    addBuy: (newBuy)=>set(()=>({asset: newBuy }))
+
 }))

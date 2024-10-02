@@ -1,10 +1,9 @@
 @import "../../styles/variable.scss";
 .expense{
-    display: grid;
+    display: flex;
     width: auto;
     gap: 20px;
-    grid-template-columns: repeat(3,1fr);
-    grid-auto-rows: minmax(180px, auto);
+    flex-direction: column;
     .box{
         border: none;
         border-radius: 10px;
